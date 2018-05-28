@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import CardList from './CardList';
-// import SearchBox from './SearchBox';
-import { SWfilms } from './SWfilms'
-import './App.css'
 
-class App extends Component {
+
+class Toggle extends Component {
   constructor() {
     super();
     this.state = {isToggleOn: true};
@@ -21,16 +18,14 @@ class App extends Component {
 
   render() {
     return(
-      <div className='tc'>
-        <h1>Star Wars The Ultimate Guide</h1>
-        <CardList SWfilms={SWfilms}/>
-        {/* <button onClick={this.handleClick}>
+      <div>
+        <button onClick={this.handleClick}>
           {this.state.isToggleOn ? 'ON' : 'OFF'}
-        </button> */}
+        </button>
       </div>
     )
   }
 }
 
 
-export default App;
+export default Toggle;
