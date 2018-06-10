@@ -1,32 +1,29 @@
 import React, { Component } from 'react';
 import CardList from './CardList';
-// import SearchBox from './SearchBox';
 import { SWfilms } from './SWfilms'
 import './App.css'
 
 class App extends Component {
   constructor() {
     super();
-    this.state = {isToggleOn: true};
+    this.state = {
+      SWfilms: SWfilms,
+    }
 
-    // This binding is necessary to make `this` work in the callback
-    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
-    this.setState(prevState => ({
-      isToggleOn: !prevState.isToggleOn
-    }));
-  }
+  // componentDidMount() {
+  //   fetch('SWapi url')
+  //     .then(response=> response.json())
+  //     .then(users => {this.setState({ SWfilms: SWfilms})});
+  // }
 
   render() {
     return(
       <div className='tc'>
         <h1>Star Wars The Ultimate Guide</h1>
-        <CardList SWfilms={SWfilms}/>
-        {/* <button onClick={this.handleClick}>
-          {this.state.isToggleOn ? 'ON' : 'OFF'}
-        </button> */}
+        <h2>Click to choose a movie to Search!</h2>
+        <CardList SWfilms={this.state.SWfilms}/>
       </div>
     )
   }

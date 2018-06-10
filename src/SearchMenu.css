@@ -1,0 +1,17 @@
+form {
+  font-family: 'Sigma Five Marquee Bold Italic';
+  font-weight: 200;
+  color: yellow;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiU9aOrMLCBXYOeWrr6Tuw1bNPjGaFw_IbIm60Psg9Ckjv10lkpQ);
+}
+
+label {
+  color: yellow;
+}
+
+select, option, input {
+  font-family: 'News Gothic MT Bold';
+  font-weight: normal;
+  color: yellow;
+  background-color: black;
+}

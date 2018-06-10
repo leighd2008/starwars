@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import List from "./List"
+import './SearchMenu.css'
 
 
 class SearchMenu extends Component {
-  constructor(){
-    super();
-    this.state = {selectValue: 'People'};
-    this.title = {title};
+  constructor(props){
+    super(props);
+    this.state = {
+      value: '',
+      searchResults: []
+    };
 
     // This binding is necessary to make `this` work in the callback
     this.handleChange = this.handleChange.bind(this);
@@ -14,28 +18,32 @@ class SearchMenu extends Component {
 
   handleChange(event) {
     this.setState({value: event.target.value});
+    console.log('Choice has been made', event.target.value)
   }
 
-  handleSubmit(event) {
+  handleSubmit(event, props) {
     event.preventDefault();
+    let searchResults = []
+    this.setState({searchResults: this.props[this.state.value]})
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          <br/>
-          {`Choose a category to see items `}<br/>{`featured in ${this.state.title}`}<br/>
-          <select value={this.state.value} onChange={this.handleChange}>
-            <option value="characters">Characters</option>
-            <option value="planets">Planets</option>
-            <option value="species">Species</option>
-            <option value="starships">Starships</option>
-            <option value="vehicles">Vehicles</option>
-          </select>
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            <br/>
+            {`Choose a category to see items `}<br/>{`featured in ${this.props.title} `} <br/><br/>
+            <select value={this.state.value} onChange={this.handleChange}>
+              <option disabled hidden value=''></option>
+              {this.props.options.map(x => <option key={x} value={x}>{x.charAt(0).toUpperCase() + x.slice(1)}</option>)}
+            </select>
+          </label>
+          <br/><br/>
+          <input type="submit" value="Submit" />
+        </form>
+        <List searchResults={this.state.searchResults}/>
+      </div>
     );
   }
 }
