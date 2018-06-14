@@ -5,6 +5,7 @@
   "homepage": "https://leighd2008.github.io/starwars/",
   "dependencies": {
     "animated-scroll-to": "^1.2.1",
+    "gh-pages": "^1.2.0",
     "moment": "^2.22.2",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
