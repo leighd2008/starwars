@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CardList from './CardList';
+import Scroll from './scroll';
 import './App.css'
 
 class App extends Component {
@@ -25,8 +26,9 @@ class App extends Component {
         <div className='tc'>
           <h1>Star Wars The Ultimate Guide</h1>
           <h2>Click to choose a movie to Search!</h2>
-          {console.log('app.js', this.state.SWfilms)}
-          <CardList SWfilms={this.state.SWfilms.results}/>
+          <Scroll>
+            <CardList SWfilms={this.state.SWfilms.results}/>
+          </Scroll>
         </div>
       )
     }

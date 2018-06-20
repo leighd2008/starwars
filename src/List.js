@@ -1,3 +1,5 @@
+// needs to be adapted to show results not searchresults
+
 import React, { Component } from 'react';
 
 class List extends Component{

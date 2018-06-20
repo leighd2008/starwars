@@ -4,11 +4,9 @@ import moment from 'moment';
 
 
 const CardList = ({ SWfilms }) => {
-  {console.log('CardList', SWfilms)}
 
   return (
     <div>
-      {/* <p>{SWfilms[0].title}</p> */}
       {
         SWfilms.map((film, i) => {
           return (

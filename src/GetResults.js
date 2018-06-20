@@ -1,3 +1,5 @@
+// copied from SearchMenu
+
 import React, { Component } from 'react';
 import ResultsList from "./ResultsList"
 import './SearchMenu.css'
