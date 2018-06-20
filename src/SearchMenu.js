@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import ResultsList from "./ResultsList"
+import List from "./List"
 import './SearchMenu.css'
-
 
 
 class SearchMenu extends Component {
@@ -43,7 +42,7 @@ class SearchMenu extends Component {
           <br/><br/>
           <input type="submit" value="Submit" />
         </form>
-        <ResultsList />
+        <List searchResults={this.state.searchResults}/>
       </div>
     );
   }
