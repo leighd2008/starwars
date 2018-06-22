@@ -39,7 +39,7 @@ class SearchMenu extends Component {
         <form onSubmit={this.handleSubmit}>
           <label>
             <br/>
-            {`Choose a category to see items `}<br/>{`featured in ${this.props.title} `} <br/><br/>
+            <h2>{`Choose a category and click submit twice to see items `}<br/>{`featured in ${this.props.title} `}</h2> <br/><br/>
             <select value={this.state.value} onChange={this.handleChange}>
               <option disabled hidden value=''></option>
               {this.props.options.map(x => <option key={x} value={x}>{x.charAt(0).toUpperCase() + x.slice(1)}</option>)}
@@ -48,6 +48,7 @@ class SearchMenu extends Component {
           <br/><br/>
           <input type="submit" value="Submit" />
           <br/>
+          <h2>{"To run another search refresh the page before choosing a new category or select a different movie"}</h2><br/>
           <List onSubmit={this.handleSubmit} searchResults={this.state.searchResults} search={this.state.value}/>
 
         </form>
