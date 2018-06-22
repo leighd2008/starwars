@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import List from "./List"
-import './SearchMenu.css'
+import List from "./List";
+import './SearchMenu.css';
+// import ResultsList from "./ResultsList"
+
 
 
 class SearchMenu extends Component {
@@ -8,7 +10,8 @@ class SearchMenu extends Component {
     super(props);
     this.state = {
       value: '',
-      searchResults: []
+      searchResults: [],
+      searchState: ''
     };
 
     // This binding is necessary to make `this` work in the callback
@@ -19,17 +22,20 @@ class SearchMenu extends Component {
   handleChange(event) {
     this.setState({value: event.target.value});
     console.log('Choice has been made', event.target.value)
+    // this.setState({searchResults: this.props[event.target.value]})
+    // console.log('searchResults:', this.props[event.target.value])
+
   }
 
   handleSubmit(event, props) {
     event.preventDefault();
-    let searchResults = []
     this.setState({searchResults: this.props[this.state.value]})
+    console.log(this.props[this.state.value])
   }
 
   render() {
     return (
-      <div>
+      <div >
         <form onSubmit={this.handleSubmit}>
           <label>
             <br/>
@@ -41,8 +47,11 @@ class SearchMenu extends Component {
           </label>
           <br/><br/>
           <input type="submit" value="Submit" />
+          <br/>
+          <List onSubmit={this.handleSubmit} searchResults={this.state.searchResults} search={this.state.value}/>
+
         </form>
-        <List searchResults={this.state.searchResults}/>
+
       </div>
     );
   }
