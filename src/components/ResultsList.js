@@ -1,9 +1,9 @@
 import React from 'react';
-import CharacterCard from './CharacterCard'
-import PlanetCard from './PlanetCard'
-import SpeciesCard from './SpeciesCard'
-import StarshipCard from './StarshipCard'
-import VehicleCard from './VehicleCard'
+import CharacterCard from '../components/CharacterCard'
+import PlanetCard from '../components/PlanetCard'
+import SpeciesCard from '../components/SpeciesCard'
+import StarshipCard from '../components/StarshipCard'
+import VehicleCard from '../components/VehicleCard'
 // import { Results } from './Results';
 
 

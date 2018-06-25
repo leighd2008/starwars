@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ResultsList from './ResultsList'
+import ResultsList from '../components/ResultsList'
 
 let Results = [];
 
@@ -38,7 +38,7 @@ class List extends Component{
     }
 
   render(){
-      {this.fetchData()}
+      this.fetchData()
 
     return(
       <div>

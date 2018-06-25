@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import CardList from './CardList';
-import Scroll from './scroll';
+import CardList from '../components/CardList';
+import Scroll from '../components/scroll';
 import './App.css'
 
 class App extends Component {
@@ -19,7 +19,8 @@ class App extends Component {
   }
 
   render() {
-    if (this.state.SWfilms.length === 0){
+    const { SWfilms } = this.state;
+    if (SWfilms.length === 0){
       return <h1>Loading</h1>
     } else {
       return(
@@ -30,7 +31,7 @@ class App extends Component {
             <CardList SWfilms={this.state.SWfilms.results}/>
           </Scroll>
         </div>
-      )
+      );
     }
 
   }

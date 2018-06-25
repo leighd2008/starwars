@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import List from "./List";
 import './SearchMenu.css';
-// import ResultsList from "./ResultsList"
-
 
 
 class SearchMenu extends Component {
@@ -22,9 +20,6 @@ class SearchMenu extends Component {
   handleChange(event) {
     this.setState({value: event.target.value});
     console.log('Choice has been made', event.target.value)
-    // this.setState({searchResults: this.props[event.target.value]})
-    // console.log('searchResults:', this.props[event.target.value])
-
   }
 
   handleSubmit(event, props) {
