@@ -6,12 +6,12 @@ let Results = [];
 class List extends Component{
   constructor() {
     super();
-    this.state = { ready: false };
+    this.state = { Results: [] };
 
     this.fetchData = this.fetchData.bind(this);
   }
 
-  fetchData() {
+  fetchData = () => {
     this.props.searchResults.map(item => {
       let url = item;
 
@@ -24,17 +24,25 @@ class List extends Component{
         })
         .then(data => {
           Results.push(data)
+
+          console.log(Results)
         });
       return Results
       })
   }
 
+
+    componentDidMount() {
+      this.fetchData()
+      this.setState({ Results: Results})
+    }
+
   render(){
-    {this.fetchData()}
+      {this.fetchData()}
+
     return(
       <div>
-
-        <ResultsList Results={Results} search={this.props.search}/>
+          <ResultsList Results={this.state.Results} search={this.props.search}/>
       </div>
     )
   }

@@ -1,11 +1,11 @@
 import React from 'react';
 
-const CharacterCard = ({ name, height, mass, hair_color, skin_color, eye_color, birth_year, gender, homeworld, species }) => {
+const CharacterCard = ({ CHname, height, mass, hair_color, skin_color, eye_color, birth_year, gender, homeworld, species }) => {
 
   return (
     <div className='tc grow bg-black br3 pa3 ma2 dib bw2 shadow-5'>
       <div>
-        <h2>{name}</h2>
+        <h2>{CHname}</h2>
         <p>Height: {height}</p>
         <p>Mass: {mass}</p>
         <p>Hair Color: {hair_color}</p>

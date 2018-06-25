@@ -18,7 +18,7 @@ const ResultsList = ({ Results, search }) => {
             return (
               <CharacterCard
                 key={Results[i].name}
-                name={Results[i].name}
+                CHname={Results[i].name}
                 height={Results[i].height}
                 hair_color={Results[i].hair_color}
                 mass={Results[i].mass}
