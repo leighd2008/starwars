@@ -11,10 +11,10 @@ const ResultsList = ({ Results, search }) => {
 
   return (
     <div>
-      {
-        Results.map((item, i) => {
+      {  Results.map((item, i) => {
+          console.log(item)
           if (search === 'characters') {
-            console.log('which came first')
+
             return (
               <CharacterCard
                 key={Results[i].name}
